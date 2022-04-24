@@ -1,0 +1,8 @@
+# ERROR xxx REDIRECT URL
+ErrorDocument 404 /js_project_winter-2022/404
+
+# REMOVE HTML EXTENSION
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
