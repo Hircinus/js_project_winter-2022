@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <style>
+		body{background-color:black;}
+		
+		header {margin-top:2%;
+			    outline:2px dashed pink;}
+		
+		a {text-decoration: none;
+		   color:Palegreen;
+		   padding-right:6%;}
+		   
+		href {underline:none;}
+		
+		img {padding-top:70px;
+			 padding-left:50px;
+			 height:250px;
+			 width:350px;}
+		
+		figcaption {color:white;}
+
+</style>
+   <title>Lab Exercise-8</title>
+</head>
+
+<body>
+
+	<header>
+		<p style="margin-left:80%;">
+			<a href="Home.html">Home</a>  
+			<a href="Shop.html" style="color:plum;">Shop</a> 
+			<a href="Cart.html">Cart</a>
+			<a href="Aboutus.html">About us</a> 
+		</p>
+	</header>
+	
+	<h1 style="color:Palegreen;font-size:43px;text-align:center;"> Types 🍄 </h1>
+	
+	<p style="text-align:center;">
+			 
+
+		<img src="MUSHI2.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
+		<img src="MUSHI3.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
+
+		<br>
+		
+		<img src="MUSHI4.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
+		<img src="MUSHI5.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
+
+		<br>
+		
+		<img src="MUSHI6.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
+		<img src="MUSHI7.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
+
+	</p>
+	
+	<script>
+function Pale(x) {
+  x.style.opacity = "0.8";
+}
+
+function Dark(x) {
+  x.style.opacity = "1";
+}
+</script>
+
+	
+	
+</body>
+  
+   
