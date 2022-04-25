@@ -1,6 +1,6 @@
 let products = [
     golden_teacher =  {
-        id: 1,
+        id: 0,
         name: "Golden Teacher",
         active: "psilocybin",
         description: "",
@@ -9,7 +9,6 @@ let products = [
 ]
 
 //End of product list
-
 
 //Adding event click to each element with class addCart
 let clear = document.getElementById("pages");
