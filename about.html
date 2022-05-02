@@ -3,50 +3,40 @@
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <style>
-		body{background-color:black;}
-		
-		header {margin-top:2%;
-			    outline:2px dashed pink;}
-		
-		a {text-decoration: none;
-		   color:Palegreen;
-		   padding-right:6%;}
-		   
-		href {underline:none;}
-		
-		img {margin-left:3%;
-			 outline:3px dashed pink;
-			 outline-offset: 10px;}
-
-</style>
+   <link rel="stylesheet" href="assets/style.css">
    <title>Lab Exercise-8</title>
 </head>
 
 <body>
-
-	<header>
-		<p style="margin-left:80%;">
-			<a href="Home.html">Home</a>  
-			<a href="Shop.html">Shop</a> 
-			<a href="Cart.html">Cart</a>
-			<a href="Aboutus.html" style="color:plum;">About us</a> 
-		</p>
-	</header>
-	
-	<h1 style="color:Palegreen;font-size:43px;text-align:center;"> About Us 🍄 </h1>
-	
-	<img src="powerpuff.jpg"  alt="powerpuff" width="500" height="300">
-	
-	<p style="color:Palegreen; margin-left:3%;"> 
-	Hey there!, <br>
-	we are 3 workers that decided to create our small buisness we have Xavier, Jess, and Henna. <br>
-	We met eachother in cegep. We needed to do a teamwork, so we put ourselves together, and decided to do a buisness. <br>
-	With the money that we make we are able to pay our loans and food. <br>
-	Thank you for wisiting ou website and helping us ! <br>
-	</p>
-	
-
+	<nav id="navbar" class="nav center side medium">
+		<button class="menuButton" onclick="navbarExtend()"><img id="menuButton" data-src="src/assets/menu_close.svg" src="src/assets/menu_burger.svg"></button>
+		<div id="navContent" class="nav-content center">
+			<a href="index" class="link"><img src="src/assets/pixel-logo.svg"></a>
+				<a href="index" class="link">Home</a>
+				<a href="about" class="link active">About</a>
+				<a href="shop" class="link">Shop</a>
+				<a href="cart" class="link">Cart</a>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="center">About Us 🍄</h1>
+			</div>
+			<div class="col-4">
+				<img src="powerpuff.jpg"  alt="powerpuff">
+			</div>
+			<div class="col-8">
+				<p> 
+					Hey there!, <br>
+					we are 3 workers that decided to create our small buisness we have Xavier, Jess, and Henna. <br>
+					We met eachother in cegep. We needed to do a teamwork, so we put ourselves together, and decided to do a buisness. <br>
+					With the money that we make we are able to pay our loans and food. <br>
+					Thank you for wisiting ou website and helping us ! <br>
+					</p>
+			</div>
+		</div>
+	</div>
 </body>
   
    

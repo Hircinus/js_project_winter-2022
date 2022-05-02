@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <style>
-		body{background-color:black;}
-		
-		header {margin-top:2%;
-			    outline:2px dashed pink;}
-		
-		a {text-decoration: none;
-		   color:Palegreen;
-		   padding-right:6%;}
-		   
-		href {underline: none;}
-		
-		img {display: block; 
-			 margin-left: auto;
-			 margin-right:auto;
-			 outline:3px dashed pink;
-			 outline-offset: 10px;}
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="stylesheet" href="assets/style.css">
+	<title>Shroomies</title>
+	</head>
 
-</style>
-   <title>Lab Exercise-8</title>
-</head>
-
-<body>
-
-	<header>
-		<p style="margin-left:80%;">
-			<a href="Home.html" style="color:plum;">Home</a>  
-			<a href="Shop.html">Shop</a> 
-			<a href="Cart.html">Cart</a>
-			<a href="Aboutus.html">About us</a> 
-		</p>
-	</header>
-	
-	<h1 style="color:Palegreen;font-size:43px;text-align:center;"> Name of the website 🍄 </h1>
-	
-	<img src="MUSHI.jpg"  alt="MUSHI" width="700" height="400">
-	
-	<p style="text-align:center;color:Palegreen;"> Hi!, we are a small buisness that sells mushrooms to help you relax.</p>
-	
-</body>
+	<body>
+		<nav id="navbar" class="nav center side medium">
+			<button class="menuButton" onclick="navbarExtend()"><img id="menuButton" data-src="src/assets/menu_close.svg" src="src/assets/menu_burger.svg"></button>
+			<div id="navContent" class="nav-content center">
+				<a href="index" class="link"><img src="src/assets/pixel-logo.svg"></a>
+				<a href="index" class="link active">Home</a>
+				<a href="about" class="link">About</a>
+				<a href="shop" class="link">Shop</a>
+				<a href="cart" class="link">Cart</a>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 center">
+					<h1>Name of the website 🍄</h1>
+					<p> Hi!, we are a small buisness that sells mushrooms to help you relax.</p>
+				</div>
+			</div>
+		</div>
+		<script src="assets/script.js"></script>
+	</body>
+</html>
   
    

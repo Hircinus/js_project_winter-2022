@@ -9,6 +9,22 @@ let products = [
 ]
 
 //End of product list
+let navContent = document.getElementById('navContent');
+let menuButton = document.getElementById('menuButton');
+let navbar = document.getElementById("navbar");
+var ogImg;
+function navbarExtend() {
+    navContent.classList.toggle("show");
+    if(navContent.classList.contains("show")) {
+        ogImg = menuButton.src;
+        menuButton.src = menuButton.dataset.src;
+        menuButton.dataset.src = ogImg;
+    } else {
+        altImg = menuButton.src;
+        menuButton.src = menuButton.dataset.src;
+        menuButton.dataset.src = altImg;
+    }
+  }
 
 //Adding event click to each element with class addCart
 let clear = document.getElementById("pages");
