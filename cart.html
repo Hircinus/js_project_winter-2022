@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <link rel="stylesheet" href="assets/style.css">
+   <title>Lab Exercise-8</title>
+</head>
+
+<body>
+	<nav id="navbar" class="nav center side medium">
+		<button class="menuButton" onclick="navbarExtend()"><img id="menuButton" data-src="src/assets/menu_close.svg" src="src/assets/menu_burger.svg"></button>
+		<div id="navContent" class="nav-content center">
+			<a href="index" class="link"><img src="src/assets/pixel-logo.svg"></a>
+				<a href="index" class="link">Home</a>
+				<a href="about" class="link">About</a>
+				<a href="shop" class="link">Shop</a>
+				<a href="cart" class="link active">Cart</a>
+		</div>
+	</nav>
+	<!--
+	<header>
+		<p style="margin-left:80%;">
+			<a href="Home.html">Home</a>  
+			<a href="Shop.html">Shop</a> 
+			<a href="Cart.html" style="color:plum;">Cart</a>
+			<a href="Aboutus.html">About us</a> 
+		</p>
+	</header>
+-->
+	<h1 class="center"> Cart 🍄 </h1>
+
+	<div class="container, surround, costs">
+		<div class="row">
+			<div class="col-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 justify-center">
+							<h2>Order Details</h2>
+						</div>
+					</div>
+					<div class="row">
+						<!--products will display here-->
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<p>Subtotal: </p>
+						</div>
+						<div class="col-6">
+							<p id="sub">N/A</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<p>Tax:</p>
+						</div>
+						<div class="col-6">
+							<p id="tax">N/A</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<p>Total</p>
+						</div>
+						<div class="col-6">
+							<p id="total">N/A</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-10">
+				<div class="container" id="cart">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+  
+   
