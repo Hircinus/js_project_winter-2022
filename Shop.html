@@ -19,25 +19,41 @@
 			 padding-left:50px;
 			 height:250px;
 			 width:350px;}
-		
-		figcaption {color:white;}
 
 </style>
+   <link rel="stylesheet" href="assets/style.css">
    <title>Lab Exercise-8</title>
 </head>
 
 <body>
 
-	<header>
-		<p style="margin-left:80%;">
-			<a href="Home.html">Home</a>  
-			<a href="Shop.html" style="color:plum;">Shop</a> 
-			<a href="Cart.html">Cart</a>
-			<a href="Aboutus.html">About us</a> 
-		</p>
-	</header>
-	
-	<h1 style="color:Palegreen;font-size:43px;text-align:center;"> Types 🍄 </h1>
+	<nav id="navbar" class="nav center side medium">
+		<button class="menuButton" onclick="navbarExtend()"><img id="menuButton" data-src="src/assets/menu_close.svg" src="src/assets/menu_burger.svg"></button>
+		<div id="navContent" class="nav-content center">
+			<a href="index" class="link"><img src="src/assets/pixel-logo.svg"></a>
+				<a href="index" class="link">Home</a>
+				<a href="about" class="link">About</a>
+				<a href="shop" class="link active">Shop</a>
+				<a href="cart" class="link">Cart</a>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="center">Shop</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<h2 class="center">Daddy long legs</h2>
+				<img class="center" src="https://fadedfungi.is/wp-content/uploads/2022/03/DaddyLongLegs1.jpg">
+				<ul>
+					<li>Species: Psilocybe Cubensis</li>
+					<li>Source: Fraser Valley, British Columbia</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	
 	<p style="text-align:center;">
 			 
@@ -56,19 +72,6 @@
 		<img src="MUSHI7.jpg" onmouseover="Pale(this)" onmouseout="Dark(this)">
 
 	</p>
-	
-	<script>
-function Pale(x) {
-  x.style.opacity = "0.8";
-}
-
-function Dark(x) {
-  x.style.opacity = "1";
-}
-</script>
-
-	
-	
+	<script src="assets/script.js"></script>
 </body>
   
-   
