@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -31,24 +30,6 @@ button.desc {
     display: block
 }
 
-=======
-body{background-color:black;}
-		
-		header {margin-top:2%;
-			    outline:2px dashed pink;}
-		
-		a {text-decoration: none;
-		   color:Palegreen;
-		   padding-right:6%;}
-		   
-		href {underline:none;}
-		
-		img {display: block; 
-			 margin-left: auto;
-			 margin-right:auto;
-			 outline:3px dashed pink;
-			 outline-offset: 10px;}
->>>>>>> 5ac26fab906cee4b7135adcec05b5dce03ec6690
 .center {
     text-align: center;
 }
