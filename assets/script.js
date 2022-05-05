@@ -1,12 +1,35 @@
 let products = [
-    golden_teacher =  {
+    daddy_long_legs =  {
         id: 0,
         name: "Daddy long legs",
         active: "Psilocybe Cubensis",
         source: "Fraser Valley, British Columbia",
         description: "Daddy Long Legs Psilocybe Cubensis are a unique strain from the Fraser Valley region of the Lower Mainland of British Columbia. It is speculated this strain has been growing naturally for millenia, although the cultivation of the strain has been ongoing since the ’90s.",
-        ppg: 8,
-        amount: 0
+        price: 75
+    },
+    alacabenzi =  {
+        id: 1,
+        name: "Alacabenzi",
+        active: "Psilocybe Cubensis",
+        source: "Alabama, US & Mexico",
+        description: "Daddy Long Legs Psilocybe Cubensis are a unique strain from the Fraser Valley region of the Lower Mainland of British Columbia. It is speculated this strain has been growing naturally for millenia, although the cultivation of the strain has been ongoing since the ’90s.",
+        price: 60
+    },
+    amazonians =  {
+        id: 2,
+        name: "Amazonians",
+        active: "Psilocybe Cubensis",
+        source: "Amazon rainforest",
+        description: "Daddy Long Legs Psilocybe Cubensis are a unique strain from the Fraser Valley region of the Lower Mainland of British Columbia. It is speculated this strain has been growing naturally for millenia, although the cultivation of the strain has been ongoing since the ’90s.",
+        price: 95
+    },
+    blue_meanies =  {
+        id: 3,
+        name: "Blue meanies",
+        active: "Psilocybe Cubensis",
+        source: "Sub-tropical climates (The Americas, Africa, Southeast Asia, Australia)",
+        description: "Daddy Long Legs Psilocybe Cubensis are a unique strain from the Fraser Valley region of the Lower Mainland of British Columbia. It is speculated this strain has been growing naturally for millenia, although the cultivation of the strain has been ongoing since the ’90s.",
+        price: 125
     }
 ]
 
@@ -41,48 +64,80 @@ function showDesc(index) {
 if(localStorage.getItem("products") == null) {
     localStorage.setItem("products", "");
 }
+if(localStorage.getItem("amounts") == null) {
+    localStorage.setItem("amounts", "");
+}
 
 //Adding event click to each element with class addCart
-let clear = document.getElementById("pages");
-//clear.addEventListener('click', clearCart)
 var temp = [];
 let obj;
 
 function addToCart(value) {
     var temp = [];
     obj = products[value];
-    if (JSON.parse(localStorage.getItem("products")) != null) {
-        temp = JSON.parse(localStorage.getItem("products"));
+    temp = localStorage.getItem("products");
+    if(exists(value)==value) {
+        alert("Product already added");
+        return;
     }
-    temp.push(obj);
-    localStorage.setItem("products", JSON.stringify(temp));
-};
+    if(temp == "") {
+        temp += obj.id;
+    } else {
+        temp += " " + obj.id;
+    }
+    localStorage.setItem("products", temp);
+}
+
+function exists(id) {
+    for(product in localStorage.getItem("products").split(" ")) {
+        if(product == id) {
+            return id;
+        }
+    }
+    return false;
+}
+
+let sub = document.getElementById("sub");
+let tax = document.getElementById("tax");
+let total = document.getElementById("total");
 
 function loadCart() {
     /*Call back the array*/
     var retrievedData = localStorage.getItem("products");
-    var arr = JSON.parse(retrievedData);
-    console.log(arr);
-
-    let wrap = document.getElementById("inCart");
-    for (i = 0; i < arr.length; i++) {
-        let div = document.createElement("div");
-        div.style.width = "80%";
-        div.style.paddingTop = "4em";
-        div.style.paddingBottom = "4em";
-        div.style.float = "left";
-        let AnchorName = document.createElement("a");
-        AnchorName.style.float = "left";
-        let desc = document.createTextNode(arr[i].name);
-
-        wrap.appendChild(div);
-        div.appendChild(AnchorName);
-        AnchorName.appendChild(desc);
+    var amountData = localStorage.getItem("amounts");
+    var ids = retrievedData.split(" ");
+    let cart = document.getElementById("cart");
+    let row = document.createElement("div");
+    row.classList.add("row");
+    cart.appendChild(row);
+    let subtotal = 0;
+    for (i=0;i<ids.length;i++) {
+        let el = products[ids[i]];
+        let col = document.createElement("div");
+        col.classList.add("col-12");
+        let h3 = document.createElement("h3");
+        h3.textContent = el.name;
+        let desc = document.createElement("p");
+        desc.innerHTML = el.description + "<br>Price: $" + el.price;
+        row.appendChild(col);
+        col.appendChild(h3);
+        col.appendChild(desc);
+        subtotal += parseInt(el.price);
+    }
+    if(ids.length == 0) {
+        sub.textContent = "$0";
+        tax.textContent = "$0";
+        total.textContent = "$0";
+    } else {
+        sub.textContent = "$" + subtotal;
+        tax.textContent = "$" + (subtotal * 0.15);
+        total.textContent = "$" + (subtotal + (subtotal * 0.15));
     }
 }
 
 function clearCart() {
-    localStorage.clear();
+    localStorage.setItem("products", "");
+    location.reload();
 }
 /*Load the products in the product.html page*/
 function loadProducts() {

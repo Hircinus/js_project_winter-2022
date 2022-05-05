@@ -3,30 +3,11 @@
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <style>
-		body{background-color:black;}
-		
-		header {margin-top:2%;
-			    outline:2px dashed pink;}
-		
-		a {text-decoration: none;
-		   color:Palegreen;
-		   padding-right:6%;}
-		   
-		href {underline:none;}
-		
-		img {display: block; 
-			 margin-left: auto;
-			 margin-right:auto;
-			 outline:3px dashed pink;
-			 outline-offset: 10px;}
-
-	</style>
    <link rel="stylesheet" href="assets/style.css">
    <title>Cart - Magician's Cabin</title>
 </head>
 
-<body>
+<body onload="loadCart()">
 	<nav id="navbar" class="nav center side medium">
 		<button class="menuButton" onclick="navbarExtend()"><img id="menuButton" data-src="src/assets/menu_close.svg" src="src/assets/menu_burger.svg"></button>
 		<a href="index" class="center logo">The Magician's Cabin</a>
@@ -47,52 +28,45 @@
 		</p>
 	</header>
 -->
-	<h1 class="center"> Cart 🍄 </h1>
+	<h1 class="center">Cart</h1>
 
 	<div class="container, surround, costs">
 		<div class="row">
-			<div class="col-2">
+			<div class="col-3">
 				<div class="container">
 					<div class="row">
 						<div class="col-12 justify-center">
 							<h2>Order Details</h2>
+							<button onclick="clearCart()">Clear</button>
 						</div>
-					</div>
-					<div class="row">
-						<!--products will display here-->
-					</div>
-					<div class="row">
 						<div class="col-6">
 							<p>Subtotal: </p>
 						</div>
 						<div class="col-6">
-							<p id="sub">N/A</p>
+							<p id="sub">$0</p>
 						</div>
-					</div>
-					<div class="row">
 						<div class="col-6">
 							<p>Tax:</p>
 						</div>
 						<div class="col-6">
-							<p id="tax">N/A</p>
+							<p id="tax">$0</p>
 						</div>
-					</div>
-					<div class="row">
 						<div class="col-6">
 							<p>Total</p>
 						</div>
 						<div class="col-6">
-							<p id="total">N/A</p>
+							<p id="total">$0</p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-10">
+			<div class="col-9">
 				<div class="container" id="cart">
 				</div>
 			</div>
 		</div>
 	</div>
+	<script src="assets/script.js"></script>
 </body>
   
    
