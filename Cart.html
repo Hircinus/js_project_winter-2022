@@ -3,7 +3,7 @@
 <head>
    <meta charset="utf-8" />
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-   <style>
+    <style>
 		body{background-color:black;}
 		
 		header {margin-top:2%;
@@ -21,12 +21,12 @@
 			 outline:3px dashed pink;
 			 outline-offset: 10px;}
 
-</style>
+	</style>
+   <link rel="stylesheet" href="assets/style.css">
    <title>Lab Exercise-8</title>
 </head>
 
 <body>
-
 	<header>
 		<p style="margin-left:80%;">
 			<a href="Home.html">Home</a>  
@@ -35,11 +35,53 @@
 			<a href="Aboutus.html">About us</a> 
 		</p>
 	</header>
-	
-	<h1 style="color:Palegreen;font-size:43px;text-align:center;"> Cart 🍄 </h1>
 
+	<h1 class="center"> Cart 🍄 </h1>
 
-	
+	<div class="container, surround, costs">
+		<div class="row">
+			<div class="col-2">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 justify-center">
+							<h2>Order Details</h2>
+						</div>
+					</div>
+					<div class="row">
+						<!--products will display here-->
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<p>Subtotal: </p>
+						</div>
+						<div class="col-6">
+							<p id="sub">N/A</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<p>Tax:</p>
+						</div>
+						<div class="col-6">
+							<p id="tax">N/A</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-6">
+							<p>Total</p>
+						</div>
+						<div class="col-6">
+							<p id="total">N/A</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-10">
+				<div class="container" id="cart">
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
   
    
