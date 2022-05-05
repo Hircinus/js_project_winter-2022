@@ -1,10 +1,12 @@
 let products = [
     golden_teacher =  {
         id: 0,
-        name: "Golden Teacher",
-        active: "psilocybin",
-        description: "",
-        ppg: 8
+        name: "Daddy long legs",
+        active: "Psilocybe Cubensis",
+        source: "Fraser Valley, British Columbia",
+        description: "Daddy Long Legs Psilocybe Cubensis are a unique strain from the Fraser Valley region of the Lower Mainland of British Columbia. It is speculated this strain has been growing naturally for millenia, although the cultivation of the strain has been ongoing since the ’90s.",
+        ppg: 8,
+        amount: 0
     }
 ]
 
@@ -26,15 +28,29 @@ function navbarExtend() {
     }
   }
 
+// show description
+
+function showDesc(index) {
+    let el = document.getElementsByClassName("desc-li")[index];
+    let me = document.getElementsByClassName("desc-btn")[index];
+    el.classList.toggle("show");
+    me.classList.toggle("show");
+}
+
+// localstorage
+if(localStorage.getItem("products") == null) {
+    localStorage.setItem("products", "");
+}
+
 //Adding event click to each element with class addCart
 let clear = document.getElementById("pages");
-clear.addEventListener('click', clearCart)
+//clear.addEventListener('click', clearCart)
 var temp = [];
 let obj;
 
 function addToCart(value) {
     var temp = [];
-    obj = Array_Products[value];
+    obj = products[value];
     if (JSON.parse(localStorage.getItem("products")) != null) {
         temp = JSON.parse(localStorage.getItem("products"));
     }

@@ -1,5 +1,66 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+}
+
+
+button.desc-btn {
+    display: none;
+}
+button.desc-btn.show {
+    display: block
+}
+
+button.desc {
+    border: none;
+    background-color: white;
+    text-decoration: underline;
+} button.desc:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.card > ul > p {
+    display: none
+} .card > ul > p.show {
+    display: block
+}
+
 .center {
     text-align: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 10px 0 5px 0;
+    padding: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.card {
+    box-shadow: 0px 0px 5px #808080;
+    border-radius: 10px;
+    padding: 10px;
+}
+.card > img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.add_btn {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: outset green 2px;
+    transition: background-color ease .25s;
+} .add_btn:hover {
+    cursor: pointer;
+    background-color: lightgreen;
 }
 
 /* Grid system */
