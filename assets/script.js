@@ -1,3 +1,5 @@
+// Store products
+
 let products = [
     daddy_long_legs =  {
         id: 0,
@@ -33,7 +35,7 @@ let products = [
     }
 ]
 
-//End of product list
+// Handle navbar collapse and expansion (not necessary)
 let navContent = document.getElementById('navContent');
 let menuButton = document.getElementById('menuButton');
 let navbar = document.getElementById("navbar");
@@ -51,8 +53,7 @@ function navbarExtend() {
     }
   }
 
-// show description
-
+// Toggle product description boxes
 function showDesc(index) {
     let el = document.getElementsByClassName("desc-li")[index];
     let me = document.getElementsByClassName("desc-btn")[index];
@@ -60,18 +61,25 @@ function showDesc(index) {
     me.classList.toggle("show");
 }
 
-// localstorage
+// Store products added to cart
 if(localStorage.getItem("products") == null) {
     localStorage.setItem("products", "");
 }
-if(localStorage.getItem("amounts") == null) {
-    localStorage.setItem("amounts", "");
-}
 
-//Adding event click to each element with class addCart
+
 var temp = [];
 let obj;
 
+// Adding event click to "add to cart" buttons
+let count = 0;
+document.getElementsByClassName("add_btn").forEach(function (el) {
+    el.addEventListener("click", function() {
+        addToCart(count);
+    }, false);
+    count++;
+})
+
+// Add product of ID "value" to the cart (stored in localStorage)
 function addToCart(value) {
     var temp = [];
     obj = products[value];
@@ -88,6 +96,7 @@ function addToCart(value) {
     localStorage.setItem("products", temp);
 }
 
+// Check if product already is added to cart
 function exists(id) {
     for(product in localStorage.getItem("products").split(" ")) {
         if(product == id) {
@@ -97,11 +106,11 @@ function exists(id) {
     return false;
 }
 
-let sub = document.getElementById("sub");
-let tax = document.getElementById("tax");
-let total = document.getElementById("total");
-
+// Generate cart in "cart.html"
 function loadCart() {
+    let sub = document.getElementById("sub");
+    let tax = document.getElementById("tax");
+    let total = document.getElementById("total");
     /*Call back the array*/
     var retrievedData = localStorage.getItem("products");
     var amountData = localStorage.getItem("amounts");
@@ -135,47 +144,8 @@ function loadCart() {
     }
 }
 
+// Clear cart by emptying localStorage value and refreshing page
 function clearCart() {
     localStorage.setItem("products", "");
     location.reload();
-}
-/*Load the products in the product.html page*/
-function loadProducts() {
-    let wrap = document.getElementById("wrapper");
-    console.log(Array_Products[0].brand);
-    for (i = 0; i < Array_Products.length; i++) {
-
-        let div = document.createElement("div");
-        div.style.width = "20%";
-
-        div.style.padding = "50px 10px 10px 10px";
-        div.style.margin = "50px 10px 10px 10px";
-
-        let title = document.createTextNode(Array_Products[i].name);
-
-        let img = document.createElement("img");
-        img.src = Array_Products[i].imageSRC;
-        img.style.height = "50%";
-        img.style.maxWidth = "100%";
-
-        let AnchorName = document.createElement("a");
-        let desc = document.createTextNode(Array_Products[i].description);
-        let btn = document.createElement("button");
-        btn.innerHTML = "Add to cart";
-        btn.classList.add("addCart");
-        btn.value = i;
-        let newBr = document.createElement("br");
-        let newBr2 = document.createElement("br");
-
-        wrap.appendChildren(div, title);
-        div.appendChildren(img, newBr2, AnchorName);
-        AnchorName.appendChild(desc);
-        div.appendChildren(newBr, btn);
-    }
-    var adding = document.querySelectorAll('.addCart');
-
-    adding.forEach(el => el.addEventListener('click', function() {
-        addToCart(el.value);
-    }));
-
 }
